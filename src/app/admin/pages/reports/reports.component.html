@@ -1,0 +1,46 @@
+<div class="filter-row" style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 1rem;">
+    <p-calendar [(ngModel)]="startDate" dateFormat="yy-mm-dd" placeholder="From" [maxDate]="today"></p-calendar>
+    <p-calendar [(ngModel)]="endDate" dateFormat="yy-mm-dd" placeholder="To" [maxDate]="today"></p-calendar>
+    <button type="button" pButton label="Filter" icon="pi pi-filter" class="p-button-sm" (click)="filterOrdersByDate()"></button>
+</div>
+
+
+<p-progressSpinner *ngIf="loading" styleClass="custom-spinner"></p-progressSpinner>
+
+<h2>{{'ADMIN.ORDER_HISTORY' | translate}}</h2>
+    <div *ngIf="orderHistory?.length ===0" style="font-weight: bold; text-align: center; margin-top: 100px; color: #2563eb;">
+            <h2>{{'ADMIN.NO_DATA'| translate}}</h2>
+        </div>
+<p-accordion *ngIf="!loading" [multiple]="true" >
+    <p-accordionTab *ngFor=" let order of orderHistory" [header]="('ADMIN.ORDER' | translate)+ '#'+ order.orderId">
+        <div class="order-info">
+            <p><strong>{{'ADMIN.CUSTOMER'| translate}} </strong>{{order.customerName}}</p>
+            <p><strong>{{'ADMIN.MOBILE'| translate}} </strong>{{order.mobileNumber}}</p>
+            <p><strong>{{'ADMIN.EMPLOYEE'| translate}}</strong>{{order.employeeId}}</p>
+            <p><strong>{{'ADMIN.EMPLOYEE_NAME'| translate}} </strong>{{order.employeeName}}</p>
+            <p><strong>{{'ADMIN.DATE'| translate}} </strong>{{order.orderDate | date:'dd-MM-yy HH:mm a'}}</p>
+            <p><strong>{{'ADMIN.TOTAL_AMOUNT'| translate}} </strong>{{order.totalAmount | currency:'INR':'symbol-narrow':'1.2-2'}}</p>
+        </div>
+
+        <p-table [value]="order.items" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>{{'ADMIN.ITEM'| translate}}</th>
+                    <th>{{'ADMIN.PRICE'| translate}}</th>
+                    <th>{{'ADMIN.QUANTITY'| translate}}</th>
+                    <th>{{'ADMIN.TOTAL'| translate}}</th>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body" let-item>
+                <tr>
+                    <td>{{item.foodItemName}}</td>
+                    <td>{{item.foodItemPrice}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.foodItemPrice * item.quantity | currency:'INR':'symbol-narrow':'1.2-2'}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </p-accordionTab>
+</p-accordion>
+

@@ -1,0 +1,68 @@
+<div class="filter-row" style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 1rem;">
+  <p-calendar [(ngModel)]="startDate" dateFormat="yy-mm-dd" placeholder="From" [maxDate]="today"></p-calendar>
+  <p-calendar [(ngModel)]="endDate" dateFormat="yy-mm-dd" placeholder="To" [maxDate]="today"></p-calendar>
+  <button type="button" pButton [label]="'ADMIN.FILTER' | translate" icon="pi pi-filter" class="p-button-sm"
+    (click)="filterOrdersByDate()"></button>
+</div>
+
+<div class="dashboard-grid">
+  <!-- Top Cards -->
+  <p-card [header]="'ADMIN.TOTAL_EMPLOYEES'| translate">
+    <h2>{{empLength}}</h2>
+  </p-card>
+
+  <p-card [header]="'ADMIN.TOTAL_ORDERS' | translate ">
+    <h2>{{orderLength || 0}}</h2>
+  </p-card>
+
+  <p-card [header]="'ADMIN.TODAYS_REVENUE' | translate">
+    <h2>₹{{todayRevenue || 0}}</h2>
+  </p-card>
+
+  <p-card [header]="'ADMIN.TOTAL_REVENUE' | translate">
+    <h2>₹{{totalRevenue || 0}}</h2>
+  </p-card>
+
+  <!-- Chart -->
+  <div class="chart-container">
+    <p-card [header]="'ADMIN.REVENUE_OVERVIEW'| translate">
+      <p-chart *ngIf="topSellingChartData && topSellingChartData.labels?.length" type="pie" [data]="topSellingChartData"
+        [options]="topSellingChartOptions" [responsive]="true"></p-chart>
+      <div *ngIf="!topSellingChartData || !topSellingChartData.labels?.length"
+        style="text-align: center; font-weight: bold; padding: 1rem; color: #2563eb;">
+        <h2>{{'ADMIN.NO_DATA' | translate}}</h2>
+      </div>
+    </p-card>
+  </div>
+
+  <!-- Recent Orders -->
+  <div class="orders-table">
+    <p-card [header]="'ADMIN.RECENT_ORDERS'| translate">
+      <p-table [value]="recentOrder" [paginator]="true" [rows]="5">
+        <ng-template pTemplate="emptymessage">
+          <tr>
+            <td colspan="4" style="text-align: center; font-weight: bold;">
+              <h2 style="color: #2563eb;">{{'ADMIN.NO_DATA' | translate}}</h2>
+            </td>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="header">
+          <tr>
+            <th>{{'ADMIN.CUSTOMER' | translate}}</th>
+            <th>{{'ADMIN.MOBILE' | translate}}</th>
+            <th>{{'ADMIN.DATE_TIME' | translate}}</th>
+            <th>{{'ADMIN.AMOUNT' | translate}}</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-order>
+          <tr>
+            <td>{{ order.customerName }}</td>
+            <td>{{ order.mobileNumber }}</td>
+            <td>{{order.orderDate | date:'dd-MM-yy HH:mm a'}}</td>
+            <td>₹{{ order.totalAmount }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </p-card>
+  </div>
+</div>

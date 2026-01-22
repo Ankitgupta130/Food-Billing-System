@@ -1,0 +1,82 @@
+<p-toast></p-toast>
+
+<div class="p-mt-3" style="margin-bottom: 10px;">
+    <button pButton type="button" icon="pi pi-shopping-cart" [label]="'EMPLOYEE.VIEW_CART'| translate" (click)="cartDialogVisible = true"
+        class="p-button-info"></button>
+    <button pButton type="button" [label]="'EMPLOYEE.CHECKOUT'| translate" icon="pi pi-shopping-cart" class="p-button-warning"
+        style="float: right;" (click)="goToCart()"></button>
+
+</div>
+
+
+<p-table [value]="foodItems" [responsive]="true" dataKey="id" [paginator]="true" [rows]="5">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>{{'EMPLOYEE.TABLE.NAME'| translate}}</th>
+            <th>{{'EMPLOYEE.TABLE.IMAGE'| translate}}</th>
+            <th>{{'EMPLOYEE.TABLE.PRICE'| translate}}</th>
+            <th>{{'EMPLOYEE.TABLE.QUANTITY'| translate}}</th>
+            <th>{{'EMPLOYEE.TABLE.ACTIONS'| translate}}</th>
+        </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-item let-rowIndex="rowIndex">
+        <tr>
+            <td>{{ item.name }}</td>
+            <td><img *ngIf="item.imageUrl"
+                    [src]="item.imageUrl.startsWith('http') ?  item.imageUrl : foodItemService.imageBaseUrl + item.imageUrl"
+                    width="100" height="100" /></td>
+            <td>{{item.price}}</td>
+            <td>
+                <input type="number" pInputText [(ngModel)]="item.quantity" [min]="1" [max]="10" />
+            </td>
+            <td>
+                <button pButton icon="pi pi-shopping-cart" [label]="'EMPLOYEE.TABLE.ADD_TO_CART'| translate" (click)="addToCart(item)"
+                    class="p-button-success p-button-sm"></button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<p-dialog [header]="'EMPLOYEE.DIALOG.CART_SUMMARY'| translate" [(visible)]="cartDialogVisible" [modal]="true" [style]="{width: '400px'}">
+    <ng-container>
+        <table class="p-datatable p-datatable-sm">
+            <thead>
+                <tr>
+                    <th>{{'EMPLOYEE.TABLE.NAME'| translate}}</th>
+                    <th>{{'EMPLOYEE.TABLE.QUANTITY'| translate}}</th>
+                    <th>{{'EMPLOYEE.TABLE.PRICE'| translate}}</th>
+                    <th>{{'EMPLOYEE.TABLE.ACTIONS'| translate}}</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="cart().length > 0; else emptyCart">
+                <tr *ngFor="let item of cart()">
+                    <td>{{item.name}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.price*item.quantity}}</td>
+                    <td>
+                        <button pButton type="button" icon="pi pi-trash" class="p-button-danger p-button-sm"
+                            (click)="removeFromCart(item.id, item.name)"></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="footer-container">
+            <div class="p-mt-3 p-text-right">
+                <button pButton type="button" [label]="'EMPLOYEE.DIALOG.CLEAR_CART'| translate" icon="pi pi-trash" class="p-button-danger"
+                    (click)="clearCart()"></button>
+            </div>
+
+            <div class="p-mt-3 p-text-right font-bold">
+                {{'EMPLOYEE.DIALOG.TOTAL'| translate}}{{ getTotal() }}
+            </div>
+
+        </div>
+
+
+    </ng-container>
+
+    <ng-template #emptyCart>
+        <p>{{'EMPLOYEE.DIALOG.EMPTY_CART'| translate}}</p>
+    </ng-template>
+</p-dialog>

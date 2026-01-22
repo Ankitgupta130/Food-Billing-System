@@ -1,0 +1,51 @@
+.employee-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    // gap: 30px;
+    align-items: center;
+    background-color: #1f2937;
+    color: white;
+    padding: 1rem;
+
+    .title {
+      margin: 0;
+      // margin-right: 54%;
+    }
+    
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      span {
+        font-weight: bold;
+      }
+
+      button {
+        padding: 0.5rem 1rem;
+        background-color: #ef4444;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .router-container {
+    flex: 1;
+    padding: 2rem;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f3f4f6;
+  }
+}

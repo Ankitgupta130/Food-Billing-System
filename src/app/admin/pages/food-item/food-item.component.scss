@@ -1,0 +1,75 @@
+.food-item {
+  padding: 1.5rem;
+
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+
+    button {
+      font-weight: 600;
+    }
+  }
+}
+
+// Style for PrimeNG Table
+:host ::ng-deep .p-table {
+  width: 100%;
+  margin-top: 1rem;
+
+  th, td {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  img {
+    border-radius: 0.5rem;
+    object-fit: cover;
+  }
+
+  .p-button {
+    margin: 0 0.3rem;
+  }
+}
+
+// Style for p-dialog form
+:host ::ng-deep .p-dialog {
+  width: 400px !important;
+  max-width: 90vw;
+
+  .p-dialog-content {
+    padding: 1.5rem;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .p-field {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+
+        input[type="file"] {
+          padding: 0.4rem 0;
+        }
+
+        img {
+          margin-top: 0.5rem;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+
+  .p-dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    // border-top: 1px solid #ccc;
+  }
+}

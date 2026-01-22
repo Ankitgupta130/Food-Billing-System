@@ -1,0 +1,142 @@
+<p-toast></p-toast>
+<div class="employee-page">
+  <div class="header">
+    <h2>{{'ADMIN.EMPLOYEES1'| translate}}</h2>
+    <button pButton [label]="'ADMIN.ADD_EMPLOYEE' | translate" icon="pi pi-plus" (click)="openDialog()"></button>
+  </div>
+
+  <p-table [value]="employees" responsiveLayout="scroll" [paginator]="true" [rows]="5">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>{{'ADMIN.NAME'| translate}}</th>
+        <th>{{'ADMIN.PHONE'| translate}}</th>
+        <th>{{'ADMIN.EMAIL'| translate}}</th>
+        <th>{{'ADMIN.USERNAME' | translate}}</th>
+        <th>{{'ADMIN.ROLE'| translate}}</th>
+        <th>{{'ADMIN.ACTIONS'| translate}}</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-employee>
+      <tr>
+        
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.phone }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.username }}</td>
+        
+       
+        <td>{{ employee.role }}</td>
+        <td>
+          <button pButton icon="pi pi-pencil" (click)="openDialog(employee)" class="p-button-rounded p-button-text"></button>
+          <button pButton icon="pi pi-trash" (click)="deleteEmployee(employee.id)" class="p-button-rounded p-button-danger p-button-text"></button>
+          @if (employee.status=="INACTIVE") {
+
+    
+                      <button pButton label="ACTIVATE" class="p-button-primary" (click)="setStatus(employee.userId, 'ACTIVE',employee.name)"></button>
+          }
+          @else {
+                      <button pButton label="DEACTIVATE" class="p-button-danger" (click)="setStatus(employee.userId, 'INACTIVE',employee.name)"></button>
+
+          }
+        </td>
+     
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <p-dialog [(visible)]="showDialog" [modal]="true" [style]="{ width: '400px' }" [closable]="false">
+    <h3 *ngIf="!isEdit">{{'ADMIN.REGISTER_EMPLOYEE'| translate}}</h3>
+    <h3 *ngIf="isEdit">{{'ADMIN.EDIT_EMPLOYEE'| translate
+      }}</h3>
+
+    <form [formGroup]="employeeForm" class="p-fluid">
+      <!-- Name -->
+      <div class="p-field">
+        <label for="name">{{'ADMIN.NAME'| translate}}</label>
+        <input id="name" pInputText formControlName="name" (paste)="disablePaste($event)" (keypress)="allowOnlyLetters($event)" />
+        <small *ngIf="employeeForm.get('name')?.invalid && employeeForm.get('name')?.touched" class="p-error">
+          <span *ngIf="employeeForm.get('name')?.errors?.['required']">{{'ADMIN.ERRORS.NAME_REQUIRED'| translate}}</span>
+          <span *ngIf="employeeForm.get('name')?.errors?.['pattern']">{{'ADMIN.ERRORS.NAME_PATTERN'| translate}}</span>
+        </small>
+      </div>
+
+      <!-- Phone -->
+      <div class="p-field">
+        <label for="phone">{{'ADMIN.PHONE'| translate}}</label>
+        <input id="phone" pInputText formControlName="phone" (paste)="disablePaste($event)" (keypress)="allowOnlyDigits($event)" />
+        <small *ngIf="employeeForm.get('phone')?.invalid && employeeForm.get('phone')?.touched" class="p-error">
+          <span *ngIf="employeeForm.get('phone')?.errors?.['phone']">{{'ADMIN.ERRORS.PHONE_REQUIRED'| translate}}</span>
+          <span *ngIf="employeeForm.get('phone')?.errors?.['pattern']">{{'ADMIN.ERRORS.PHONE_PATTERN'| translate}}</span>
+        </small>
+      </div>
+
+      <!-- Email -->
+      <div class="p-field">
+        <label for="email">{{'ADMIN.EMAIL'| translate}}</label>
+        <input id="email" pInputText formControlName="email" />
+        <small *ngIf="employeeForm.get('email')?.invalid && employeeForm.get('email')?.touched" class="p-error">
+          <span *ngIf="employeeForm.get('email')?.errors?.['required']">{{'ADMIN.ERRORS.EMAIL_REQUIRED'| translate}}</span>
+          <span *ngIf="employeeForm.get('username')?.errors?.['pattern']">{{'ADMIN.ERRORS.EMAIL_PATTERN'| translate}}</span>
+        </small>
+      </div>
+
+      <!-- Username -->
+      <div class="p-field" *ngIf="!isEdit">
+        <label for="username">{{'ADMIN.USERNAME'| translate}}</label>
+        <input id="username" pInputText formControlName="username" />
+        <small *ngIf="employeeForm.get('username')?.invalid && employeeForm.get('username')?.touched" class="p-error">
+          <span *ngIf="employeeForm.get('username')?.errors?.['required']">{{'ADMIN.ERRORS.USERNAME_REQUIRED'| translate}}</span>
+          <span *ngIf="employeeForm.get('username')?.errors?.['pattern']">{{'ADMIN.ERRORS.USERNAME_PATTERN'| translate}}</span>
+          <span *ngIf="employeeForm.get('username')?.errors?.['usernameTaken']">{{'ADMIN.ERRORS.USERNAME_TAKEN'| translate}}</span>
+        </small>
+      </div>
+
+      <!-- Password -->
+      <div class="p-field" *ngIf="!isEdit">
+        <label for="password">{{'ADMIN.PASSWORD'| translate}}</label>
+        <div class="p-inputgroup">
+          <input
+            id="password"
+            [type]="showPassword ? 'text' : 'password'"
+            pInputText
+            formControlName="password"
+          />
+          <button type="button" pButton icon="pi pi-eye" (click)="showPassword = !showPassword"></button>
+        </div>
+        <small *ngIf="employeeForm.get('password')?.invalid && employeeForm.get('password')?.touched" class="p-error">
+          <span *ngIf="employeeForm.get('password')?.errors?.['required']">{{'ADMIN.ERRORS.PASSWORD_REQUIRED'| translate}}</span>
+          <span *ngIf="employeeForm.get('password')?.errors?.['pattern']">{{'ADMIN.ERRORS.PASSWORD_PATTERN'| translate}}</span>
+        </small>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="p-field" *ngIf="!isEdit">
+        <label for="confirmPassword">{{'ADMIN.CONFIRM_PASSWORD'| translate}}</label>
+        <div class="p-inputgroup">
+          <input
+            id="confirmPassword"
+            [type]="showConfirmPassword ? 'text' : 'password'"
+            pInputText
+            formControlName="confirmPassword"
+          />
+          <button type="button" pButton icon="pi pi-eye" (click)="showConfirmPassword = !showConfirmPassword"></button>
+        </div>
+        <small *ngIf="employeeForm.hasError('mismatch') && employeeForm.get('confirmPassword')?.touched" class="p-error">
+          {{'ADMIN.ERRORS.PASSWORD_MISMATCH'| translate}}
+        </small>
+      </div>
+    </form>
+
+    <!-- Footer Buttons -->
+    <div class="dialog-footer">
+      <button pButton [label]="'ADMIN.CANCEL'| translate" class="p-button-secondary" (click)="showDialog = false"></button>
+      <button
+        pButton
+        [label]="'ADMIN.SAVE' | translate"
+        class="p-button-primary"
+        (click)="saveEmployee()"
+        [disabled]="employeeForm.invalid"
+      ></button>
+    </div>
+  </p-dialog>
+</div>

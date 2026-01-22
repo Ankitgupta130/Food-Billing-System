@@ -1,0 +1,73 @@
+<p-toast></p-toast>
+
+<div class="main-container">
+
+    <div class="dropdown-container">
+        <p-dropdown [options]="languages" [(ngModel)]="selectedLanguage" (onChange)="changeLanguage($event.value)"
+            optionLabel="label" styleClass="p-inputtext-sm p-dropdown-sm language-dropdown">
+        </p-dropdown>
+    </div>
+    <div class="login-container">
+        <div class="login-card">
+            <h2 class="login-title"><i class="pi pi-shopping-cart"></i>Avion Food Billing System</h2>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+                <div>
+                    <label for="username">{{'LOGIN.USERNAME' | translate}}</label>
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon">
+                            <i class="pi pi-user"></i>
+                        </span>
+                        <input pInputText formControlName="username"
+                            [placeholder]="'LOGIN.USERNAME_PLACEHOLDER' | translate " />
+                    </div>
+                    <small *ngIf="submitted && f['username'].errors" class="error">
+                        Username is required.
+                    </small>
+                </div>
+
+
+                <div>
+                    <label for="password">{{'LOGIN.PASSWORD' | translate}}</label>
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon">
+                            <i class="pi pi-lock"></i>
+                        </span>
+                        <input type="password" pPassword formControlName="password"
+                            [placeholder]="'LOGIN.PASSWORD_PLACEHOLDER' | translate" [feedback]="false" />
+                    </div>
+                    <small *ngIf="submitted && f['password'].errors?.['required']" class="error">
+                        Password is required.
+                    </small>
+                </div>
+
+                <!-- <div>
+                <label for="captcha">{{'LOGIN.CAPTCHA' | translate}}: <span
+                        class="captcha-text">{{captcha}}</span></label>
+                <div class="p-inputgroup">
+                    <div class="captcha-display">
+                        <button pButton type="button" icon="pi pi-refresh" style="background-color: #2d2d2d;"
+                            class="p-button-text" (click)="refreshCaptcha()"></button>
+                    </div>
+                    <input pInputText [placeholder]="'LOGIN.CAPTCHA_PLACEHOLDER' | translate "
+                        formControlName="captchaInput">
+                </div>
+
+                <div>
+                    <small *ngIf="submitted && f['captchaInput'].errors?.['required']" class="p-error">Captcha is
+                        required</small>
+                </div>
+            </div> -->
+
+                <div class="captcha" style="margin:auto; margin-top: 10px;">
+                    <ngx-recaptcha2 [siteKey]="siteKey" formControlName="captchaInput" (success)="handleSuccess($event)"
+                        (load)="handleLoad()" (reset)="handleReset()" (expire)="handleExpire()"></ngx-recaptcha2>
+                </div>
+
+                <button pButton type="submit" [label]="'LOGIN.LOGIN_BUTTON'| translate" class="login-btn"
+                    [disabled]="loginForm.invalid"></button>
+            </form>
+        </div>
+    </div>
+
+</div>

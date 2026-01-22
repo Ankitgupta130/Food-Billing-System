@@ -1,0 +1,11 @@
+.order-info {
+  margin-bottom: 1rem;
+  p {
+    margin: 0.2rem 0;
+  }
+}
+
+::ng-deep .custom-spinner {
+  display: block;
+  margin: 2rem auto;
+}

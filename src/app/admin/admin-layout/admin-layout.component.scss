@@ -1,0 +1,136 @@
+.admin-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+
+  .sidebar {
+    width: 240px;
+    background-color: #1f2937;
+    color: white;
+    padding: 1rem;
+    flex-shrink: 0;
+    overflow-y: auto;
+
+    ::ng-deep .p-panelmenu {
+      background: transparent;
+      border: none;
+
+      .p-panelmenu-header {
+        margin-bottom: 0.75rem;
+        border: none;
+        background-color: transparent !important;
+        border-radius: 6px;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background-color: #374151 !important;
+        }
+
+        .p-panelmenu-header-content {
+          border-bottom: 40px;
+          color: white;
+          font-weight: 500;
+          border: none;
+          background: none;
+
+          .pi {
+            margin-right: 0.5rem;
+          }
+        }
+
+        &.p-highlight {
+          background-color: #4b5563 !important;
+          color: white !important;
+        }
+      }
+
+      .p-panelmenu-content {
+        .p-menuitem {
+          margin-left: 1rem;
+
+          .p-menuitem-link {
+            padding: 0.5rem 1rem;
+            color: #d1d5db;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+
+            &:hover {
+              background-color: #4b5563 !important;
+              color: white !important;
+            }
+
+            &.p-highlight {
+              background-color: #2563eb !important;
+              color: white !important;
+            }
+
+            .pi {
+              margin-right: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  ::ng-deep .p-panelmenu {
+    .p-panelmenu-header {
+      .p-panelmenu-header-content {
+        .p-panelmenu-header-action {
+          color: white;
+          padding: 1.25rem;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f4f6;
+    overflow: hidden;
+
+    .header {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #24314e;
+      color: white;
+
+      h2 {
+        margin: 0;
+        font-size: 1.25rem;
+      }
+
+      ::ng-deep .p-button {
+        border: none;
+        background: none;
+        color: white;
+        font-weight: 500;
+
+        &:hover {
+          background-color: #4b5563;
+        }
+      }
+    }
+
+    .router-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 2rem;
+    }
+
+    .footer {
+      flex-shrink: 0;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #6b7280;
+      background-color: #e5e7eb;
+    }
+  }
+}

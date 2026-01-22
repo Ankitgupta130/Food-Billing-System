@@ -1,0 +1,134 @@
+{
+  "LOGIN": {
+    "USERNAME": "Username",
+    "USERNAME_PLACEHOLDER": "Enter Username",
+    "PASSWORD": "Password",
+    "PASSWORD_PLACEHOLDER": "Enter Password",
+    "CAPTCHA": "Captcha",
+    "CAPTCHA_PLACEHOLDER": "Enter captcha",
+    "LOGIN_BUTTON": "Login",
+    "INVALID_CAPTCHA": "Invalid CAPTCHA",
+    "CAPTCHA_FAILED": "CAPTCHA failed",
+    "LOGIN_FAILED": "Login Failed",
+    "LOGIN_FAILED_DETAIL": "Invalid login credentials"
+  },
+  "ADMIN": {
+    "TITLE": "Avion Food Billing System",
+    "FILTER":"Filter",
+    "DASHBOARD": "Dashboard",
+    "EMPLOYEES": "Employees",
+    "FOOD_MENU": "Food Menu",
+    "REPORTS": "Reports",
+    "LOGOUT": "Logout",
+    "COPYRIGHT": "© 2025 Avion Food Billing System",
+    "TOTAL_EMPLOYEES": "Total Employees",
+    "TOTAL_ORDERS": "Total Orders",
+    "TODAYS_REVENUE":"Today's Revenue",
+    "TOTAL_REVENUE": "Total Revenue",
+    "REVENUE_OVERVIEW": "Top 5 Food Selling Items",
+    "RECENT_ORDERS": "Recent Orders",
+    "NO_DATA": "No data available",
+    "CUSTOMER": "Customer",
+    "MOBILE": "Mobile",
+    "DATE_TIME": "Date & Time",
+    "AMOUNT": "Amount",
+    "EMPLOYEES1": "Employees",
+    "ADD_EMPLOYEE": "Add Employee",
+    "NAME": "Name",
+    "PHONE": "Phone",
+    "EMAIL": "Email",
+    "USERNAME": "Username",
+    "ROLE": "Role",
+    "ACTIONS": "Actions",
+    "REGISTER_EMPLOYEE": "Register Employee",
+    "EDIT_EMPLOYEE": "Edit Employee",
+    "PASSWORD": "Password",
+    "CONFIRM_PASSWORD": "Confirm Password",
+    "CANCEL": "Cancel",
+    "SAVE": "Save",
+    "ERRORS": {
+      "NAME_REQUIRED": "Name is required.",
+      "NAME_PATTERN": "Name must be at least 3 letters.",
+      "PHONE_REQUIRED": "Phone is required.",
+      "PHONE_PATTERN": "Enter a valid 10-digit number.",
+      "EMAIL_REQUIRED": "Email is required.",
+      "EMAIL_PATTERN": "Enter a valid email address.",
+      "USERNAME_REQUIRED": "Username is required.",
+      "USERNAME_PATTERN": "Username must be 4–20 characters long.",
+      "USERNAME_TAKEN": "Username is already taken.",
+      "PASSWORD_REQUIRED": "Password is required.",
+      "PASSWORD_PATTERN": "Password must be at least 8 characters.",
+      "PASSWORD_MISMATCH": "Passwords do not match."
+    },
+    "FOOD_ITEMS": "Food Items",
+    "ADD_ITEM": "Add Item",
+    "FOOD_NAME": "Name",
+    "IMAGE": "Image",
+    "PRICE_RS": "Price (Rs)",
+    "FOOD_ACTIONS": "Actions",
+    "EDIT": "Edit",
+    "DELETE": "Delete",
+    "FOOD_ITEM": "Food Item",
+    "PRICE": "Price",
+    "FOOD_SAVE": "Save",
+    "IMAGE_UPLOAD": "Image",
+    "PREVIEW": "Preview",
+
+  "ORDER_HISTORY": "Order History",
+  "ORDER": "Order",
+  "ORDER_CUSTOMER": "Customer: ",
+  "oRDER_MOBILE": "Mobile: ",
+  "EMPLOYEE": "Employee: ",
+  "EMPLOYEE_NAME": "Employee Name: ",
+  "DATE": "Date: ",
+  "TOTAL_AMOUNT": "Total Amount: ",
+  "ITEM": "Item",
+  "ORDER_PRICE": "Price",
+  "QUANTITY": "Quantity",
+  "TOTAL": "Total"
+
+  },
+
+  "EMPLOYEE":{
+  "HEADER": {
+    "TITLE": "Avion Food Billing System",
+    "LOGOUT": "Logout"
+  },
+  "FOOTER": {
+    "COPYRIGHT": "© 2025 Avion Food Billing System"
+  },
+  "VIEW_CART": "View Cart",
+  "CHECKOUT": "Checkout",
+  "TABLE": {
+    "NAME": "Name",
+    "IMAGE": "Image",
+    "PRICE": "Price (Rs)",
+    "QUANTITY": "Quantity",
+    "ACTIONS": "Actions",
+    "ADD_TO_CART": "Add to Cart"
+  },
+  "DIALOG": {
+    "CART_SUMMARY": "Cart Summary",
+    "QTY": "Qty",
+    "CLEAR_CART": "Clear Cart",
+    "TOTAL": "Total: Rs",
+    "EMPTY_CART": "Your cart is empty."
+  },
+  "CART": {
+    "TITLE": "Cart",
+    "EMPTY": "Your cart is empty.",
+    "PRICE": "Price:",
+    "REMOVE": "Remove",
+    "TOTAL": "Total:",
+    "CUSTOMER_NAME": "Customer Name",
+    "MOBILE_NUMBER": "Mobile Number",
+    "PLACE_ORDER": "Place Order",
+    "ERROR_NAME_REQUIRED": "Name is required.",
+    "ERROR_MOBILE_REQUIRED": "Enter a valid 10-digit mobile number."
+  }
+
+}
+
+
+  
+}

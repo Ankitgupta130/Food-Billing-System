@@ -14,7 +14,7 @@ import java.util.Map;
 public class RecaptchaService {
     //
 //    @Value("${recaptcha.secret}")
-    private String secretKey="6Lcm-aQrAAAAANcVNeQSaN9gEGSWnNP6Oc2TjFti";
+    private String secretKey=""; //paste your own recaptcha secret key here
 
     private static final String GOOGLE_VERIFY_URL = "https://www.google.com/recaptcha/api/siteverify";
 

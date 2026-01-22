@@ -1,0 +1,124 @@
+// Style the cart dialog
+::ng-deep .p-dialog {
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+  .p-dialog-header {
+    background-color: #f0f4f8;
+    color: #333;
+    font-weight: 600;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .p-dialog-content {
+    padding: 1.5rem;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th,
+      td {
+        padding: 0.5rem;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+      }
+
+      th {
+        background-color: #f9fafb;
+        font-weight: 600;
+      }
+
+      .p-button-sm {
+        margin: 0 0.25rem;
+      }
+    }
+
+    .font-bold {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #1f2937;
+    }
+
+    .p-text-right {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+  }
+}
+
+// Toast styling (if using p-toast)
+::ng-deep .p-toast {
+  .p-toast-message {
+    border-radius: 0.75rem;
+    padding: 1rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+
+    &.p-toast-message-success {
+      background-color: #dafbe1;
+      border-left: 5px solid #22c55e;
+    }
+
+    &.p-toast-message-error {
+      background-color: #fdecea;
+      border-left: 5px solid #f87171;
+    }
+
+    .p-toast-message-text {
+      color: #333;
+    }
+  }
+}
+
+// Buttons
+::ng-deep .p-button {
+  border-radius: 0.5rem;
+  font-weight: 500;
+
+  &.p-button-info {
+    background-color: #3b82f6;
+    border: none;
+  }
+
+  &.p-button-warning {
+    background-color: #f59e0b;
+    border: none;
+  }
+
+  &.p-button-danger {
+    background-color: #ef4444;
+    border: none;
+  }
+
+  &.p-button-success {
+    background-color: #10b981;
+    border: none;
+  }
+}
+
+// Input field in quantity column
+::ng-deep input[type="number"] {
+  max-width: 80px;
+  border-radius: 0.4rem;
+  text-align: center;
+}
+
+::ng-deep .p-dialog .p-dialog-content {
+
+    .footer-container{
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+  .p-button-danger {
+    padding: 0.4rem 0.75rem; // Makes the button smaller
+    font-size: 0.85rem;
+    float: left;
+    margin-top: -10px;
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "LOGIN": {
+    "USERNAME": "उपयोगकर्ता नाम",
+    "USERNAME_PLACEHOLDER": "उपयोगकर्ता नाम दर्ज करें",
+    "PASSWORD": "पासवर्ड",
+    "PASSWORD_PLACEHOLDER": "पासवर्ड दर्ज करें",
+    "CAPTCHA": "कैप्चा",
+    "CAPTCHA_PLACEHOLDER": "कैप्चा दर्ज करें",
+    "LOGIN_BUTTON": "लॉगिन करें",
+    "INVALID_CAPTCHA": "अमान्य कैप्चा",
+    "CAPTCHA_FAILED": "कैप्चा विफल",
+    "LOGIN_FAILED": "लॉगिन असफल",
+    "LOGIN_FAILED_DETAIL": "अमान्य लॉगिन क्रेडेंशियल्स"
+  },
+  "ADMIN": {
+    "TITLE": "एवियन फूड बिलिंग सिस्टम",
+    "FILTER":"फ़िल्टर करें",
+    "DASHBOARD": "डैशबोर्ड",
+    "EMPLOYEES": "कर्मचारी",
+    "FOOD_MENU": "भोजन मेनू",
+    "REPORTS": "रिपोर्ट्स",
+    "LOGOUT": "लॉगआउट",
+    "COPYRIGHT": "© 2025 एवियन फूड बिलिंग सिस्टम",
+    "TOTAL_EMPLOYEES": "कुल कर्मचारी",
+    "TOTAL_ORDERS": "कुल ऑर्डर",
+    "TODAYS_REVENUE":"आज का राजस्व",
+    "TOTAL_REVENUE": "कुल राजस्व",
+    "REVENUE_OVERVIEW":"टॉप 5 सबसे अधिक बिकने वाले खाद्य आइटम",
+    "RECENT_ORDERS": "हाल की ऑर्डर",
+    "NO_DATA": "कोई डेटा उपलब्ध नहीं है",
+    "CUSTOMER": "ग्राहक",
+    "MOBILE": "मोबाइल",
+    "DATE_TIME": "तिथि और समय",
+    "AMOUNT": "राशि",
+    "EMPLOYEES1": "कर्मचारी",
+    "ADD_EMPLOYEE": "कर्मचारी जोड़ें",
+    "NAME": "नाम",
+    "PHONE": "फोन",
+    "EMAIL": "ईमेल",
+    "USERNAME": "यूज़रनेम",
+    "ROLE": "भूमिका",
+    "ACTIONS": "क्रियाएं",
+    "REGISTER_EMPLOYEE": "कर्मचारी पंजीकरण",
+    "EDIT_EMPLOYEE": "कर्मचारी संपादित करें",
+    "PASSWORD": "पासवर्ड",
+    "CONFIRM_PASSWORD": "पासवर्ड की पुष्टि करें",
+    "CANCEL": "रद्द करें",
+    "SAVE": "सहेजें",
+    "ERRORS": {
+      "NAME_REQUIRED": "नाम आवश्यक है।",
+      "NAME_PATTERN": "नाम कम से कम 3 अक्षरों का होना चाहिए।",
+      "PHONE_REQUIRED": "फोन आवश्यक है।",
+      "PHONE_PATTERN": "मान्य 10 अंकों की संख्या दर्ज करें।",
+      "EMAIL_REQUIRED": "ईमेल आवश्यक है।",
+      "EMAIL_PATTERN": "मान्य ईमेल पता दर्ज करें।",
+      "USERNAME_REQUIRED": "यूज़रनेम आवश्यक है।",
+      "USERNAME_PATTERN": "यूज़रनेम 4–20 अक्षरों का होना चाहिए।",
+      "USERNAME_TAKEN": "यूज़रनेम पहले से लिया जा चुका है।",
+      "PASSWORD_REQUIRED": "पासवर्ड आवश्यक है।",
+      "PASSWORD_PATTERN": "पासवर्ड कम से कम 8 अक्षरों का होना चाहिए।",
+      "PASSWORD_MISMATCH": "पासवर्ड मेल नहीं खा रहे हैं।"
+    },
+   "FOOD_ITEMS": "खाद्य वस्तुएं",
+  "ADD_ITEM": "आइटम जोड़ें",
+  "FOOD_NAME": "नाम",
+  "IMAGE": "छवि",
+  "PRICE_RS": "मूल्य (₹)",
+  "FOOD_ACTIONS": "क्रियाएँ",
+  "EDIT": "संपादित करें",
+  "DELETE": "हटाएं",
+  "FOOD_ITEM": "खाद्य वस्तु",
+  "PRICE": "मूल्य",
+  "FOOD_SAVE": "सहेजें",
+  "IMAGE_UPLOAD": "छवि",
+  "PREVIEW": "पूर्वावलोकन",
+
+  
+  "ORDER_HISTORY": "ऑर्डर इतिहास",
+  "ORDER": "ऑर्डर",
+  "ORDER_CUSTOMER": "ग्राहक: ",
+  "ORDER_MOBILE": "मोबाइल: ",
+  "EMPLOYEE": "कर्मचारी: ",
+  "EMPLOYEE_NAME": "कर्मचारी का नाम: ",
+  "DATE": "तारीख: ",
+  "TOTAL_AMOUNT": "कुल राशि: ",
+  "ITEM": "आइटम",
+  "ORDER_PRICE": "कीमत",
+  "QUANTITY": "मात्रा",
+  "TOTAL": "कुल"
+
+  },
+
+  "EMPLOYEE":{
+  "HEADER": {
+    "TITLE": "एवियन फूड बिलिंग सिस्टम",
+    "LOGOUT": "लॉग आउट"
+  },
+  "FOOTER": {
+    "COPYRIGHT": "© 2025 एवियन फूड बिलिंग सिस्टम"
+  },
+  
+  "VIEW_CART": "कार्ट देखें",
+  "CHECKOUT": "चेकआउट",
+  "TABLE": {
+    "NAME": "नाम",
+    "IMAGE": "चित्र",
+    "PRICE": "मूल्य (₹)",
+    "QUANTITY": "मात्रा",
+    "ACTIONS": "क्रियाएँ",
+    "ADD_TO_CART": "कार्ट में जोड़ें"
+  },
+  "DIALOG": {
+    "CART_SUMMARY": "कार्ट सारांश",
+    "QTY": "संख्या",
+    "CLEAR_CART": "कार्ट साफ़ करें",
+    "TOTAL": "कुल: ₹",
+    "EMPTY_CART": "आपका कार्ट खाली है।"
+  },
+
+  "CART": {
+    "TITLE": "कार्ट",
+    "EMPTY": "आपका कार्ट खाली है।",
+    "PRICE": "मूल्य:",
+    "REMOVE": "हटाएं",
+    "TOTAL": "कुल:",
+    "CUSTOMER_NAME": "ग्राहक का नाम",
+    "MOBILE_NUMBER": "मोबाइल नंबर",
+    "PLACE_ORDER": "ऑर्डर करें",
+    "ERROR_NAME_REQUIRED": "नाम आवश्यक है।",
+    "ERROR_MOBILE_REQUIRED": "मान्य 10-अंकों का मोबाइल नंबर दर्ज करें।"
+  }
+
+
+}
+
+}

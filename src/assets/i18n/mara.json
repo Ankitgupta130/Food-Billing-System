@@ -1,0 +1,133 @@
+{
+    "LOGIN": {
+        "USERNAME": "वापरकर्ता नाव",
+        "USERNAME_PLACEHOLDER": "वापरकर्ता नाव टाका",
+        "PASSWORD": "पासवर्ड",
+        "PASSWORD_PLACEHOLDER": "पासवर्ड टाका",
+        "CAPTCHA": "कॅप्चा",
+        "CAPTCHA_PLACEHOLDER": "कॅप्चा टाका",
+        "LOGIN_BUTTON": "लॉगिन करा",
+        "INVALID_CAPTCHA": "अवैध कॅप्चा",
+        "CAPTCHA_FAILED": "कॅप्चा अयशस्वी",
+        "LOGIN_FAILED": "लॉगिन अयशस्वी",
+        "LOGIN_FAILED_DETAIL": "अवैध लॉगिन तपशील"
+    },
+    "ADMIN": {
+        "TITLE": "एव्हियन फूड बिलिंग सिस्टम",
+        "FILTER":"फिल्टर करा",
+        "DASHBOARD": "डॅशबोर्ड",
+        "EMPLOYEES": "कर्मचारी",
+        "FOOD_MENU": "अन्न मेनू",
+        "REPORTS": "अहवाल",
+        "LOGOUT": "बाहेर पडा",
+        "COPYRIGHT": "© 2025 एव्हियन फूड बिलिंग सिस्टम",
+        "TOTAL_EMPLOYEES": "एकूण कर्मचारी",
+        "TOTAL_ORDERS": "एकूण ऑर्डर",
+        "आज का राजस्व":"आजचा महसूल",
+        "TOTAL_REVENUE": "एकूण महसूल",
+        "REVENUE_OVERVIEW": "टॉप ५ सर्वाधिक विक्री होणारे खाद्यपदार्थ",
+        "RECENT_ORDERS": "अलीकडील ऑर्डर",
+        "NO_DATA": "डेटा उपलब्ध नाही",
+        "CUSTOMER": "ग्राहक",
+        "MOBILE": "मोबाईल",
+        "DATE_TIME": "तारीख आणि वेळ",
+        "AMOUNT": "रक्कम",
+        "EMPLOYEES1": "कर्मचारी",
+        "ADD_EMPLOYEE": "कर्मचारी जोडा",
+        "NAME": "नाव",
+        "PHONE": "फोन",
+        "EMAIL": "ईमेल",
+        "USERNAME": "वापरकर्ता नाव",
+        "ROLE": "भूमिका",
+        "ACTIONS": "क्रिया",
+        "REGISTER_EMPLOYEE": "कर्मचारी नोंदणी",
+        "EDIT_EMPLOYEE": "कर्मचारी संपादन",
+        "PASSWORD": "संकेतशब्द",
+        "CONFIRM_PASSWORD": "संकेतशब्द पुन्हा लिहा",
+        "CANCEL": "रद्द करा",
+        "SAVE": "जतन करा",
+        "ERRORS": {
+            "NAME_REQUIRED": "नाव आवश्यक आहे.",
+            "NAME_PATTERN": "नाव किमान 3 अक्षरे असावे.",
+            "PHONE_REQUIRED": "फोन आवश्यक आहे.",
+            "PHONE_PATTERN": "वैध 10 अंकी नंबर प्रविष्ट करा.",
+            "EMAIL_REQUIRED": "ईमेल आवश्यक आहे.",
+            "EMAIL_PATTERN": "वैध ईमेल प्रविष्ट करा.",
+            "USERNAME_REQUIRED": "वापरकर्ता नाव आवश्यक आहे.",
+            "USERNAME_PATTERN": "वापरकर्ता नाव 4–20 अक्षरांचे असावे.",
+            "USERNAME_TAKEN": "वापरकर्ता नाव आधीच घेतले गेले आहे.",
+            "PASSWORD_REQUIRED": "संकेतशब्द आवश्यक आहे.",
+            "PASSWORD_PATTERN": "संकेतशब्द किमान 8 अक्षरे असावा.",
+            "PASSWORD_MISMATCH": "संकेतशब्द जुळत नाहीत."
+        },
+        "FOOD_ITEMS": "अन्नाचे पदार्थ",
+        "ADD_ITEM": "आयटम जोडा",
+        "FOOD_NAME": "नाव",
+        "IMAGE": "प्रतिमा",
+        "PRICE_RS": "किंमत (रु.)",
+        "FOOD_ACTIONS": "कृती",
+        "EDIT": "संपादित करा",
+        "DELETE": "हटवा",
+        "FOOD_ITEM": "अन्नाचा आयटम",
+        "PRICE": "किंमत",
+        "FOOD_SAVE": "जतन करा",
+        "IMAGE_UPLOAD": "प्रतिमा",
+        "PREVIEW": "पूर्वावलोकन",
+
+  "ORDER_HISTORY": "ऑर्डर इतिहास",
+  "ORDER": "ऑर्डर",
+  "ORDER_CUSTOMER": "ग्राहक: ",
+  "ORDER_MOBILE": "मोबाईल: ",
+  "EMPLOYEE": "कर्मचारी: ",
+  "EMPLOYEE_NAME": "कर्मचारी नाव: ",
+  "DATE": "दिनांक: ",
+  "TOTAL_AMOUNT": "एकूण रक्कम: ",
+  "ITEM": "आयटम",
+  "ORDER_PRICE": "किंमत",
+  "QUANTITY": "प्रमाण",
+  "TOTAL": "एकूण"
+    },
+
+     "EMPLOYEE":{
+  "HEADER": {
+    "TITLE": "एव्हियन फूड बिलिंग सिस्टीम",
+    "LOGOUT": "बाहेर पडा"
+  },
+  "FOOTER": {
+    "COPYRIGHT": "© 2025 एव्हियन फूड बिलिंग सिस्टीम"
+  },
+  
+  "VIEW_CART": "कार्ट पहा",
+  "CHECKOUT": "चेकआउट",
+  "TABLE": {
+    "NAME": "नाव",
+    "IMAGE": "प्रतिमा",
+    "PRICE": "किंमत (₹)",
+    "QUANTITY": "प्रमाण",
+    "ACTIONS": "कृती",
+    "ADD_TO_CART": "कार्टमध्ये जोडा"
+  },
+  "DIALOG": {
+    "CART_SUMMARY": "कार्टचा सारांश",
+    "QTY": "संख्या",
+    "CLEAR_CART": "कार्ट साफ करा",
+    "TOTAL": "एकूण: ₹",
+    "EMPTY_CART": "तुमचा कार्ट रिकामा आहे."
+  },
+
+  "CART": {
+    "TITLE": "कार्ट",
+    "EMPTY": "तुमचा कार्ट रिकामा आहे.",
+    "PRICE": "किंमत:",
+    "REMOVE": "काढा",
+    "TOTAL": "एकूण:",
+    "CUSTOMER_NAME": "ग्राहकाचे नाव",
+    "MOBILE_NUMBER": "मोबाइल क्रमांक",
+    "PLACE_ORDER": "ऑर्डर करा",
+    "ERROR_NAME_REQUIRED": "नाव आवश्यक आहे.",
+    "ERROR_MOBILE_REQUIRED": "वैध 10-अंकी मोबाइल क्रमांक प्रविष्ट करा."
+  }
+
+}
+
+}

@@ -1,0 +1,31 @@
+<div class="admin-container">
+    <div class="sidebar">
+        <p-panelMenu [model]="items"></p-panelMenu>
+    </div>
+
+    <div class="main-content">
+        <div class="header" >
+            <h2>{{'ADMIN.TITLE' | translate}}</h2>
+            <div class="language-selector">
+                <p-dropdown 
+                [options]="languages"
+                [(ngModel)]="selectedLanguage"
+                (onChange)="changeLanguage($event.value)"
+                optionLabel="label"
+                styleClass="language-dropdown" >
+            </p-dropdown>
+            </div>
+        </div>
+
+
+
+
+        <div class="router-container">
+            <router-outlet></router-outlet>
+        </div>
+
+        <div class="footer">
+            <p> {{'ADMIN.COPYRIGHT' | translate}}</p>
+        </div>
+    </div>
+</div>

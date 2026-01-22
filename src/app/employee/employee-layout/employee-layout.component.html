@@ -1,0 +1,34 @@
+<div class="employee-container">
+
+
+  <div class="header">
+    <h2 class="title">{{'EMPLOYEE.HEADER.TITLE'| translate}}</h2>
+    <div class="language-selector">
+      <p-dropdown
+      [options]="languages"
+      [(ngModel)]="selectedLanguage"
+      (onChange)="changeLanguage($event.value)"
+      optionLabel="label"
+      placeholder="Select Language"
+      styleClass="language-dropdown"
+      ></p-dropdown>
+    </div>
+
+
+    <div >
+          <button pButton icon="pi pi-history" class="p-button-primary" style="margin-right: 20px;" title="Order History" (click)="goToOrderHistory()"></button>
+
+        <button pButton [label]="'EMPLOYEE.HEADER.LOGOUT'| translate" icon="pi pi-sign-out" (click)="logOut()" class="p-button-danger"></button>
+
+    </div>
+  </div>
+
+  <div class="router-container">
+    <router-outlet></router-outlet>
+  </div>
+
+
+  <div class="footer">
+    <p>{{'EMPLOYEE.FOOTER.COPYRIGHT'| translate}}</p>
+  </div>
+</div>

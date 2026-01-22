@@ -1,0 +1,41 @@
+<div class="cart-container">
+  <h2>{{'EMPLOYEE.CART.TITLE'| translate}}</h2>
+
+  <div *ngIf="cart().length === 0">{{'EMPLOYEE.CART.EMPTY'| translate}}</div>
+
+  <div *ngIf="cart().length > 0">
+    <div *ngFor="let item of cart()" class="cart-item">
+      <p><strong>{{ item.name }}</strong></p>
+      <p>{{'EMPLOYEE.CART.PRICE'| translate}}{{ item.price }}</p>
+      <input
+        type="number"
+        [value]="item.quantity"
+        (input)="updateQuantity(item.id, +$any($event.target).value)"
+        min="1"
+      />
+      <button pButton icon="pi pi-trash" (click)="removeItem(item.id)" class="p-button-danger"></button>
+    </div>
+
+    <h3>{{'EMPLOYEE.CART.TOTAL'| translate}} ₹{{ totalAmount }}</h3>
+
+    <form [formGroup]="customerForm" (ngSubmit)="placeOrder()">
+      <div class="form-group">
+        <label for="customerName">{{'EMPLOYEE.CART.CUSTOMER_NAME'| translate}}</label>
+        <input id="customerName" pInputText formControlName="customerName" />
+        <div *ngIf="customerForm.get('customerName')?.invalid && customerForm.get('customerName')?.touched" class="error">
+          {{'EMPLOYEE.CART.ERROR_NAME_REQUIRED'| translate}}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="mobileNumber">{{'EMPLOYEE.CART.MOBILE_NUMBER'| translate}}</label>
+        <input id="mobileNumber" pInputText formControlName="mobileNumber" />
+        <div *ngIf="customerForm.get('mobileNumber')?.invalid && customerForm.get('mobileNumber')?.touched" class="error">
+          {{'EMPLOYEE.CART.ERROR_MOBILE_REQUIRED'| translate}}
+        </div>
+      </div>
+
+      <button pButton type="submit" [label]="'EMPLOYEE.CART.PLACE_ORDER' | translate" class="p-button-success"></button>
+    </form>
+  </div>
+</div>

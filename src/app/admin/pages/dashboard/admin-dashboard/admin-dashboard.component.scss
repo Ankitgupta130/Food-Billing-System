@@ -1,0 +1,31 @@
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
+  gap: 1rem;
+
+  > p-card {
+    text-align: center;
+
+    h2 {
+      margin: 0.5rem 0 0;
+      font-size: 2rem;
+      color: #2563eb;
+    }
+  }
+
+  .chart-container {
+    grid-column: span 2 ;
+  }
+
+  .orders-table {
+    grid-column: span 2;
+
+    .p-card {
+      padding: 1rem 0.5rem;
+    }
+
+    ::ng-deep .p-datatable {
+      font-size: 0.9rem;
+    }
+  }
+}
